@@ -6,6 +6,7 @@ import {
   ImageBackground,
   Animated,
   useWindowDimensions,
+  TouchableWithoutFeedback,
 } from 'react-native';
 import React, {useRef} from 'react';
 
@@ -47,7 +48,9 @@ const OnBoardScreen = () => {
           scrollEventThrottle={1}>
           {images.map((image, imageIndex) => {
             return (
-              <View style={{width: windowWidth, height: '100%'}} key={imageIndex}>
+              <View
+                style={{width: windowWidth, height: '100%'}}
+                key={imageIndex}>
                 <ImageBackground
                   source={{uri: image}}
                   style={{
@@ -80,36 +83,95 @@ const OnBoardScreen = () => {
         </ScrollView>
         <View
           style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'center',
+            position: 'absolute',
+            bottom: 0,
+            backgroundColor: '#fff',
+            width: '100%',
+            height: '40%',
+            borderTopLeftRadius: 20,
+            borderTopRightRadius: 20,
+            padding: 25,
+            justifyContent: 'space-between',
           }}>
-          {images.map((image, imageIndex) => {
-            const width = scrollX.interpolate({
-              inputRange: [
-                windowWidth * (imageIndex - 1),
-                windowWidth * imageIndex,
-                windowWidth * (imageIndex + 1),
-              ],
-              outputRange: [8, 16, 8],
-              extrapolate: 'clamp',
-            });
-            return (
-              <Animated.View
-                key={imageIndex}
-                style={[
-                  {
-                    height: 8,
-                    width: 8,
-                    borderRadius: 4,
-                    backgroundColor: 'silver',
-                    marginHorizontal: 4,
-                  },
-                  {width},
-                ]}
-              />
-            );
-          })}
+          <View
+            style={{
+              width: '100%',
+              flexDirection: 'row',
+              justifyContent: 'center',
+            }}>
+            {images.map((image, imageIndex) => {
+              const width = scrollX.interpolate({
+                inputRange: [
+                  windowWidth * (imageIndex - 1),
+                  windowWidth * imageIndex,
+                  windowWidth * (imageIndex + 1),
+                ],
+                outputRange: [8, 16, 8],
+                extrapolate: 'clamp',
+              });
+              return (
+                <Animated.View
+                  key={imageIndex}
+                  style={[
+                    {
+                      height: 8,
+                      width: 8,
+                      borderRadius: 4,
+                      backgroundColor: '#3085FE',
+                      marginHorizontal: 4,
+                    },
+                    {width},
+                  ]}
+                />
+              );
+            })}
+          </View>
+          <View>
+            <View style={{}}>
+              <Text
+                style={{
+                  fontSize: 28,
+                  fontWeight: 'bold',
+                  color: '#000',
+                  textAlign: 'center',
+                }}>
+                Easy way to confirm your attendence
+              </Text>
+            </View>
+            <View
+              style={{
+                paddingTop: 10,
+              }}>
+              <Text
+                style={{
+                  fontSize: 14,
+                  fontWeight: 'normal',
+                  color: '#777777',
+                  textAlign: 'center',
+                }}>
+                Lorem ipsum dolor sit amet. Et ipsum magnam qui suscipit aperiam
+                eum debitis perferendis
+              </Text>
+            </View>
+          </View>
+          <TouchableWithoutFeedback>
+            <View
+              style={{
+                backgroundColor: '#3085FE',
+                alignItems: 'center',
+                paddingVertical: 10,
+                borderRadius: 8,
+              }}>
+              <Text
+                style={{
+                  fontSize: 16,
+                  lineHeight: 23,
+                  color: '#fff',
+                }}>
+                Next
+              </Text>
+            </View>
+          </TouchableWithoutFeedback>
         </View>
       </View>
     </SafeAreaView>
