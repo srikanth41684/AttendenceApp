@@ -22,6 +22,7 @@ const BottomTabnav = () => {
           right: 15,
           bottom: 15,
           borderRadius: 10,
+          height: 60,
           // shadowColor: 'red',
           // shadowOffset: {
           //   width: 0,
