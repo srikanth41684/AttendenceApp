@@ -1,5 +1,5 @@
 import {View, Text, SafeAreaView, TouchableWithoutFeedback} from 'react-native';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
 
 const EmployeeType = () => {
@@ -7,6 +7,10 @@ const EmployeeType = () => {
   const [commObj, setCommObj] = useState({
     userType: null,
   });
+
+  useEffect(() => {
+    console.log('commObj------>', commObj);
+  }, [commObj]);
   return (
     <SafeAreaView
       style={{
@@ -49,7 +53,11 @@ const EmployeeType = () => {
             <View
               style={{
                 flex: 1,
-                backgroundColor: '#fff',
+                backgroundColor:
+                  commObj.userType == 'manager' ? '#B4FFB7' : '#fff',
+                borderWidth: 1,
+                borderColor:
+                  commObj.userType == 'manager' ? '#00BE08' : '#fff',
                 height: 150,
                 borderRadius: 10,
                 alignItems: 'center',
@@ -76,7 +84,11 @@ const EmployeeType = () => {
             <View
               style={{
                 flex: 1,
-                backgroundColor: '#fff',
+                backgroundColor:
+                  commObj.userType == 'employee' ? '#B4FFB7' : '#fff',
+                borderWidth: 1,
+                borderColor:
+                  commObj.userType == 'employee' ? '#00BE08' : '#fff',
                 height: 150,
                 borderRadius: 10,
                 alignItems: 'center',
@@ -106,7 +118,7 @@ const EmployeeType = () => {
             }}>
             <View
               style={{
-                backgroundColor: commObj.userType !== null ? '#3085FE' : 'red',
+                backgroundColor: commObj.userType !== null ? '#3085FE' : '#9bbff2',
                 paddingVertical: 10,
                 alignItems: 'center',
                 borderRadius: 8,
