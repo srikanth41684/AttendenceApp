@@ -56,8 +56,7 @@ const EmployeeType = () => {
                 backgroundColor:
                   commObj.userType == 'manager' ? '#B4FFB7' : '#fff',
                 borderWidth: 1,
-                borderColor:
-                  commObj.userType == 'manager' ? '#00BE08' : '#fff',
+                borderColor: commObj.userType == 'manager' ? '#00BE08' : '#fff',
                 height: 150,
                 borderRadius: 10,
                 alignItems: 'center',
@@ -113,12 +112,13 @@ const EmployeeType = () => {
           <TouchableWithoutFeedback
             onPress={() => {
               if (commObj.userType !== null) {
-                customNavigation.navigate('home');
+                customNavigation.navigate('bottomTab');
               }
             }}>
             <View
               style={{
-                backgroundColor: commObj.userType !== null ? '#3085FE' : '#9bbff2',
+                backgroundColor:
+                  commObj.userType !== null ? '#3085FE' : '#9bbff2',
                 paddingVertical: 10,
                 alignItems: 'center',
                 borderRadius: 8,

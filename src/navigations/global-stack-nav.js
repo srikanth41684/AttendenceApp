@@ -3,6 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import OnBoardingStack from './onBoarding-stack-nav';
 import EmployeeType from '../main/screens/onBoarding/EmployeeType';
 import HomeScreen from '../main/screens/dashBoard/HomeScreen';
+import BottomTabnav from './bottom-tab-nav';
 
 const GlobalStack = createNativeStackNavigator();
 
@@ -20,8 +21,8 @@ const GlobalStackNav = () => {
         options={{headerShown: false}}
       />
       <GlobalStack.Screen
-        name="home"
-        component={HomeScreen}
+        name="bottomTab"
+        component={BottomTabnav}
         options={{headerShown: false}}
       />
     </GlobalStack.Navigator>
