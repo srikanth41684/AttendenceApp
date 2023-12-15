@@ -6,8 +6,10 @@ import {
   FlatList,
 } from 'react-native';
 import React, {useState} from 'react';
+import {useNavigation} from '@react-navigation/native';
 
 const ShowLeavesScreen = () => {
+  const CustomNavigation = useNavigation();
   const [commObj, setCommObj] = useState({
     activeLeave: 'upcomig',
     upcomingLeaves: [
@@ -88,21 +90,51 @@ const ShowLeavesScreen = () => {
         }}>
         <View
           style={{
-            paddingVertical: 15,
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            paddingVertical: 10,
           }}>
-          <Text
-            style={{
-              fontSize: 16,
-              lineHeight: 23,
-              fontWeight: 'bold',
-              color: '#000',
-            }}>
-            All Leaves
-          </Text>
+          <View style={{}}>
+            <Text
+              style={{
+                fontSize: 16,
+                lineHeight: 23,
+                fontWeight: 'bold',
+                color: '#000',
+              }}>
+              All Leaves
+            </Text>
+          </View>
+          <View>
+            <TouchableWithoutFeedback
+              onPress={() => {
+                CustomNavigation.navigate('applyLeave');
+              }}>
+              <View
+                style={{
+                  backgroundColor: '#298ef2',
+                  paddingHorizontal: 20,
+                  paddingVertical: 8,
+                  borderRadius: 8,
+                }}>
+                <Text
+                  style={{
+                    fontSize: 14,
+                    lineHeight: 21,
+                    color: '#fff',
+                    fontWeight: 'bold',
+                  }}>
+                  Apply
+                </Text>
+              </View>
+            </TouchableWithoutFeedback>
+          </View>
         </View>
         <View
           style={{
             gap: 15,
+            marginTop: 10,
           }}>
           <View
             style={{
