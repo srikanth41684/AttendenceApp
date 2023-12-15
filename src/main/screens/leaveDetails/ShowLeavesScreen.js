@@ -396,7 +396,8 @@ const ShowLeavesScreen = () => {
               contentContainerStyle={{
                 flexGrow: 1,
                 gap: 15,
-                paddingVertical: 15,
+                paddingTop: 20,
+                paddingBottom: 90,
               }}
               renderItem={({item, index}) => {
                 return (
@@ -404,15 +405,13 @@ const ShowLeavesScreen = () => {
                     key={item.id}
                     style={{
                       backgroundColor: '#fff',
-                      paddingHorizontal: 15,
-                      paddingVertical: 20,
-                      borderRadius: 8,
+                      padding: 10,
+                      borderRadius: 10,
                     }}>
                     <View
                       style={{
                         borderBottomColor: 'lightgray',
                         borderBottomWidth: 0.5,
-                        paddingBottom: 15,
                       }}>
                       <View
                         style={{
@@ -458,7 +457,10 @@ const ShowLeavesScreen = () => {
                           </Text>
                         </View>
                       </View>
-                      <View>
+                      <View
+                        style={{
+                          paddingBottom: 10,
+                        }}>
                         <Text
                           style={{
                             fontSize: 16,
@@ -474,7 +476,7 @@ const ShowLeavesScreen = () => {
                       style={{
                         flexDirection: 'row',
                         justifyContent: 'space-between',
-                        paddingTop: 15,
+                        paddingTop: 10,
                       }}>
                       <View>
                         <Text
@@ -492,7 +494,7 @@ const ShowLeavesScreen = () => {
                             color: '#000',
                             fontWeight: 'bold',
                           }}>
-                          {item.numberOfDays}
+                          {item.numberOfDays} Days
                         </Text>
                       </View>
                       <View>
@@ -547,7 +549,8 @@ const ShowLeavesScreen = () => {
               contentContainerStyle={{
                 flexGrow: 1,
                 gap: 15,
-                paddingVertical: 15,
+                paddingTop: 20,
+                paddingBottom: 90,
               }}
               renderItem={({item, index}) => {
                 return (
@@ -555,15 +558,13 @@ const ShowLeavesScreen = () => {
                     key={item.id}
                     style={{
                       backgroundColor: '#fff',
-                      paddingHorizontal: 15,
-                      paddingVertical: 20,
-                      borderRadius: 8,
+                      padding: 10,
+                      borderRadius: 10,
                     }}>
                     <View
                       style={{
                         borderBottomColor: 'lightgray',
                         borderBottomWidth: 0.5,
-                        paddingBottom: 15,
                       }}>
                       <View
                         style={{
@@ -609,7 +610,10 @@ const ShowLeavesScreen = () => {
                           </Text>
                         </View>
                       </View>
-                      <View>
+                      <View
+                        style={{
+                          paddingBottom: 10,
+                        }}>
                         <Text
                           style={{
                             fontSize: 16,
@@ -625,7 +629,7 @@ const ShowLeavesScreen = () => {
                       style={{
                         flexDirection: 'row',
                         justifyContent: 'space-between',
-                        paddingTop: 15,
+                        paddingTop: 10,
                       }}>
                       <View>
                         <Text
@@ -643,7 +647,7 @@ const ShowLeavesScreen = () => {
                             color: '#000',
                             fontWeight: 'bold',
                           }}>
-                          {item.numberOfDays}
+                          {item.numberOfDays} Days
                         </Text>
                       </View>
                       <View>
@@ -698,7 +702,8 @@ const ShowLeavesScreen = () => {
               contentContainerStyle={{
                 flexGrow: 1,
                 gap: 15,
-                paddingVertical: 15,
+                paddingTop: 20,
+                paddingBottom: 90,
               }}
               renderItem={({item, index}) => {
                 return (

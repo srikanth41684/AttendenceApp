@@ -86,7 +86,7 @@ const holidayList = [
 
 const HolidaysScreen = () => {
   const [commObj, setCommObj] = useState({
-    todayDate: moment(new Date()).format('YYYY-MM-DD'),
+    todayDate: moment().format('YYYY-MM-DD'),
   });
   return (
     <SafeAreaView
@@ -122,7 +122,8 @@ const HolidaysScreen = () => {
             showsVerticalScrollIndicator={false}
             contentContainerStyle={{
               gap: 15,
-              paddingVertical: 20,
+              paddingTop: 20,
+              paddingBottom: 90,
             }}
             keyExtractor={item => item.id}
             renderItem={({item}) => {
